@@ -18,8 +18,8 @@ create table if not exists user_decks(
   deck_id int not null references decks(id) on delete cascade,
   active boolean not null default true,
   -- FSRS (deck-level) state:
-  difficulty double precision not null default 0.3, -- 0..1 (ниже = проще)
-  stability   double precision not null default 1.0, -- дни
+  difficulty double precision not null default 0.3, -- 0..1 (lower = easier)
+  stability   double precision not null default 1.0, -- days
   next_due date,
   primary key(user_id, deck_id)
 );
